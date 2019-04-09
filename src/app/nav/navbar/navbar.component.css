@@ -1,0 +1,14 @@
+nav {
+    margin-bottom:2%;
+}
+.form-inline {
+    margin-right:50px;
+}
+@media (max-width: 1200px) {
+    .form-inline {
+        display: none;
+    }
+}
+li > a.active {
+    color: #f97924 !important;
+}

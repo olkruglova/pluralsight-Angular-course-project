@@ -1,0 +1,11 @@
+.thumbnail {
+    margin-bottom: 2%;
+    min-height: 277px;
+    padding: 3%;
+}
+.green {
+    color: green !important;
+}
+.bold {
+    font-weight: bold;
+}

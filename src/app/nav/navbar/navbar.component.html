@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">ngEvents</a>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li  class="nav-item">
+        <a [routerLink]="['/events']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact:true}"
+        class="nav-link">All Events</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/events/new']"
+        routerLinkActive="active"
+        class="nav-link">Create Event</a>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" >
+          Events
+          <span class="caret"></span>
+        </a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search Sessions" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <div class="nav navbar-nav">
+      <ul class="nav navbar-nav">
+        <li class="nav-item">
+          <a *ngIf="!authService.isAuthenticated()" routerLinkActive="active" [routerLink]="['/user/login']" class="nav-link">Login</a>
+          <a *ngIf="authService.isAuthenticated()" [routerLink]="['/user/profile']" class="nav-link" href="">Welcome {{authService.currentUser.firstName}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
